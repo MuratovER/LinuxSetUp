@@ -73,3 +73,41 @@
 ```
 -$ docker container ls
 ```
+# Updating Neovim config
+```
+-$ mkdir ~/.config/nvim
+-$ nvim ~/.config/nvim/init.vim
+```
+### copy this basic config
+```
+set mouse=a  " enable mouse
+set encoding=utf-8
+set number
+set noswapfile
+set scrolloff=7
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+set fileformat=unix
+filetype indent on      " load filetype-specific indent files
+
+inoremap jk <esc>
+
+call plug#begin('~/.vim/plugged')
+Plug 'morhetz/gruvbox'  " colorscheme gruvbox
+call plug#end()
+
+colorscheme gruvbox
+
+" turn off search highlight
+nnoremap ,<space> :nohlsearch<CR>
+```
+## Installing vim-plug
+```
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
+## Updating pluggins with command in neovim :PlugInstall
