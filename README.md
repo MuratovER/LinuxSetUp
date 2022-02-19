@@ -1,40 +1,46 @@
 # LinuxSetUp
 ## Basic setup 
 ```
-~$ sudo apt-get update
+sudo apt-get update
 
-~$ sudo apt-get upgrade
+sudo apt-get upgrade
 
-~$ sudo apt-get install -y neovim wget git curl make zsh 
+sudo apt-get install -y neovim wget git curl make zsh 
 ```
 ## Upgrating python
 ### Changing Python from 3.8 to 3.10
 ```
--$ sudo apt install python3.10
+sudo add-apt-repository ppa:deadsnakes/ppa
 
--$ sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
+sudo apt update
 
--$ sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 2
+apt list | grep python3.10
 
--$ sudo update-alternatives --config python3
+sudo apt install python3.10
 
--$ sudo apt remove python3.8
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
 
--$ sudo apt autoremove
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 2
+
+sudo update-alternatives --config python3
+
+sudo apt remove python3.8
+
+sudo apt autoremove
 ```
-###Fixing problms with disutils and pip
+### Fixing problms with disutils and pip
 ```
--$ sudo apt install python3.10-distutils
+sudo apt install python3.10-distutils
 
--$ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
--$ python3.10 get-pip.py
+python3.10 get-pip.py
 
--$ sudo apt install python3.10-venv
+sudo apt install python3.10-venv
 
--$ sudo apt remove --purge python3-apt
+sudo apt remove --purge python3-apt
 
--$ sudo apt autoremove
+sudo apt autoremove
 ```
 ## Installing Oh-My-Zsh
 ```
@@ -46,37 +52,37 @@
 ```
 # Installing Docker 
 ```
--$ sudo apt-get update
--$ sudo apt-get upgrade 
+sudo apt-get update
+sudo apt-get upgrade 
 
--$ sudo apt install docker.io
+sudo apt install docker.io
 
--$ sudo systemctl start docker
--$ sudo systemctl enable docker
--$ sudo systemctl status docker
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo systemctl status docker
 ```
 ### Reboot your system
 ```
--$ sudo docker run hello-world
+sudo docker run hello-world
 
--$ sudo apt install docker-compose
+sudo apt install docker-compose
 
--$ docker-compose version
+docker-compose version
 ```
 ### Givin docker permission 
 ```
--$ sudo groupadd docker
--$ sudo gpasswd -a ${USER} docker
--$ su - $USER
+sudo groupadd docker
+sudo gpasswd -a ${USER} docker
+su - $USER
 ```
 ### Reboot your system
 ```
--$ docker container ls
+docker container ls
 ```
 # Updating Neovim config
 ```
--$ mkdir ~/.config/nvim
--$ nvim ~/.config/nvim/init.vim
+mkdir ~/.config/nvim
+nvim ~/.config/nvim/init.vim
 ```
 ### copy this basic config
 ```
