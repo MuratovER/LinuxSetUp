@@ -50,7 +50,7 @@ sudo apt autoremove
 ```
 -$ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
 ```
-# Installing Docker 
+## Installing Docker 
 ```
 sudo apt-get update
 sudo apt-get upgrade 
@@ -79,7 +79,7 @@ su - $USER
 ```
 docker container ls
 ```
-# Updating Neovim config
+## Updating Neovim config
 ```
 mkdir ~/.config/nvim
 nvim ~/.config/nvim/init.vim
